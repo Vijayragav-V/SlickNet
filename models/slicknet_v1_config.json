@@ -1,0 +1,6 @@
+{
+    "input_height": 288,
+    "input_width": 384,
+    "threshold": 0.55,
+    "min_pixels": 25
+}
