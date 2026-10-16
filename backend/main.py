@@ -41,13 +41,13 @@ ROOT = Path(
 MODEL_PATH = (
     ROOT
     / "models"
-    / "slicknet_v1.pth"
+    / "slicknet_v1_1.pth"
 )
 
 CONFIG_PATH = (
     ROOT
     / "models"
-    / "slicknet_v1_config.json"
+    / "slicknet_v1_1_config.json"
 )
 
 
@@ -80,6 +80,13 @@ DEVICE = torch.device(
     "cpu"
 )
 
+print(
+    "Model config:",
+    HEIGHT,
+    WIDTH,
+    THRESHOLD,
+    MIN_PIXELS
+)
 
 model = UNet()
 
@@ -196,9 +203,15 @@ def health():
 
     return {
         "status": "ok",
-        "model": "SlickNet V1"
+        "model": "SlickNet V1.1",
+        "input_size": {
+            "height": HEIGHT,
+            "width": WIDTH
+        },
+        "threshold": THRESHOLD,
+        "min_pixels": MIN_PIXELS,
+        "device": str(DEVICE)
     }
-
 
 @app.post("/analyze")
 async def analyze(

@@ -1,0 +1,16 @@
+{
+    "version": "1.1",
+    "architecture": "custom_unet",
+    "training_method": "positive_patch_oversampling",
+    "patch_size": 256,
+    "positive_fraction": 0.7,
+    "input_height": 384,
+    "input_width": 512,
+    "threshold": 0.7,
+    "min_pixels": 0,
+    "loss": "0.4_bce_plus_0.6_tversky",
+    "tversky_alpha": 0.3,
+    "tversky_beta": 0.7,
+    "best_validation_iou": 0.7488836704210592,
+    "best_validation_dice": 0.8564133602331123
+}
